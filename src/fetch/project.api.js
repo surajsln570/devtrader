@@ -12,7 +12,7 @@ export const postAddProject = async (submitData) => {
 }
 export const getAllProject = async () => {
    try {
-     const res = await fetch(`${baseUrl}/api/project/postaddproject`, {
+     const res = await fetch(`/api/project/postaddproject`, {
         method: "GET",
     })
     const result = await res.json();
