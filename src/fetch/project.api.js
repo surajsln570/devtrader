@@ -1,5 +1,5 @@
 
-export const baseUrl =process.env.NEXT_PUBLIC_BASE_URL
+export const baseUrl =process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 
 export const postAddProject = async (submitData) => {
@@ -12,7 +12,7 @@ export const postAddProject = async (submitData) => {
 }
 export const getAllProject = async () => {
    try {
-     const res = await fetch(`/api/project/postaddproject`, {
+     const res = await fetch(`${baseUrl}/api/project/postaddproject`, {
         method: "GET",
     })
     const result = await res.json();
