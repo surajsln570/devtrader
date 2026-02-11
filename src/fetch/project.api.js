@@ -1,8 +1,5 @@
 
-export const baseUrl =
-  typeof window === "undefined"
-    ? process.env.NEXT_PUBLIC_BASE_URL
-    : "";
+export const baseUrl =process.env.NEXT_PUBLIC_BASE_URL
 
 
 export const postAddProject = async (submitData) => {
