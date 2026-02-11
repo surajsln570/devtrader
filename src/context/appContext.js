@@ -7,6 +7,7 @@ export function AppProvider({ children }) {
     const [loading, setLoading] = useState(true)
     const [projects, setProject]=useState([])
     const [isLoggedIn, setIsLoggedIn] =useState(false)
+    
    
     return (
         <AppContext.Provider value={{ projects,setProject, isLoggedIn }}>

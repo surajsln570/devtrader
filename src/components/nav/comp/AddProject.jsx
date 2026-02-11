@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { postAddProject } from '@/fetch/project.api'
 import building from '@/assets/building.jpg'
 import { RiImageAddLine } from "react-icons/ri"
+import Pass from '@/components/pass'
 
 export default function AddProject({ setAddProject }) {
   const [formData, setFormData] = useState({
@@ -240,17 +241,7 @@ export default function AddProject({ setAddProject }) {
             </form>
           </div>
           :
-          <Container className={'bg-white z-40 justify-center rounded-lg w-[300px] h-[150px]'}>
-            <form action="">
-              <input
-                className='w-full bg-gray-100 focus:bg-white border rounded-lg p-3 outline-none'
-                value={pass}
-                onChange={handlePass}
-                type="password"
-                placeholder='Enter Password'
-              />
-            </form>
-          </Container>
+          <Pass handlePass={handlePass} pass={pass}/>
       }
     </Container>
   )

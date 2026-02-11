@@ -21,6 +21,7 @@ export default async function Home() {
   ]
 
   const projects = await getAllProject();
+  console.log(projects)
 
   return (
     <Container className={'w-full flex-col '}>

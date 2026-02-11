@@ -6,27 +6,49 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MdDelete } from "react-icons/md"
 import { deleteProject } from '@/fetch/project.api'
+import Pass from '@/components/pass'
 
 export default function OurProjImage({ oneTypeProj }) {
+  const [pass, setPass] = useState('');
 
   if (!oneTypeProj || oneTypeProj.length === 0) return null
   const [oneProj, setOneProj] = useState(oneTypeProj);
-   const handleDelete = async (e, id) => {
-      try {
-        e.preventDefault()
+  const handleDelete = async (id) => {
+    try {
         const res = await deleteProject(id)
-  
         setOneProj(prev => prev.filter(proj => proj._id !== id))
-  
         alert(res.message)
-      } catch (error) {
-        console.log(error)
-      }
+    } catch (error) {
+      console.log(error)
     }
+  }
+  const [visible, setVisible] = useState(false);
+  const [Id, setId] =useState('')
+  const handlePass = async (e) => {
+    const { value } = e.target
+    setPass(value)
+    checkPass(value)
+  }
+   const checkPass = async (password) => {
+    if (password === 'ram@123') {
+      await handleDelete(Id)
+      setVisible(false)
+    }
+  }
+  const handleClick = async (e, id)=>{
+    e.preventDefault();
+    setVisible(true)
+    setId(id)
+  }
 
 
   return (
     <Container className='flex-col w-full px-2 md:px-[100px]'>
+      {visible &&  <div
+        onClick={() => setVisible(false)}
+        className="absolute inset-0 bg-black/60 backdrop-blur-xs"
+      />}
+      {visible  && <Pass pass={pass} className={'fixed bottom-[200px]'} handlePass={handlePass}/>}
       <h1 className='text-2xl font-semibold w-full md:w-[85vw] mb-5 border-b-3 border-yellow-500'>
         {oneProj[0].projectType}
       </h1>
@@ -51,7 +73,7 @@ export default function OurProjImage({ oneTypeProj }) {
                 />
 
                 <MdDelete
-                  onClick={(e) => handleDelete(e, im._id)}
+                  onClick={(e)=>handleClick(e,im._id)}
                   className='absolute right-2 z-20 text-3xl md:text-4xl text-white hover:scale-105 transition-all duration-300 top-2'
                 />
               </div>

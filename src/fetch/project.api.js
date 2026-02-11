@@ -11,7 +11,8 @@ export const postAddProject = async (submitData) => {
 };
 
 export const getAllProject = async () => {
-  const res = await fetch(`${baseUrl}/api/project/postaddproject`, {
+  try {
+    const res = await fetch(`${baseUrl}/api/project/postaddproject`, {
     cache: "no-store",
   });
 
@@ -19,8 +20,12 @@ export const getAllProject = async () => {
     console.log(await res.text());
     return [];
   }
-
-  return res.json();
+  const r= await res.json();
+  console.log( 'r',r)
+  return r
+  } catch (error) {
+    console.log('error',error)
+  }
 };
 
 export const deleteProject = async (id) => {
