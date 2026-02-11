@@ -46,7 +46,7 @@ export default function OurProjImage({ oneTypeProj }) {
     <Container className='flex-col w-full px-2 md:px-[100px]'>
       {visible &&  <div
         onClick={() => setVisible(false)}
-        className="absolute inset-0 bg-black/60 backdrop-blur-xs"
+        className="absolute inset-0 z-30 bg-black/60 backdrop-blur-xs"
       />}
       {visible  && <Pass pass={pass} className={'fixed bottom-[200px]'} handlePass={handlePass}/>}
       <h1 className='text-2xl font-semibold w-full md:w-[85vw] mb-5 border-b-3 border-yellow-500'>
@@ -74,7 +74,7 @@ export default function OurProjImage({ oneTypeProj }) {
 
                 <MdDelete
                   onClick={(e)=>handleClick(e,im._id)}
-                  className='absolute right-2 z-20 text-3xl md:text-4xl text-white hover:scale-105 transition-all duration-300 top-2'
+                  className='absolute right-0 z-20 text-3xl md:text-4xl text-white hover:scale-105 transition-all duration-300 top-0'
                 />
               </div>
 
