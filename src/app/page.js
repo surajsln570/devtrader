@@ -1,4 +1,4 @@
-
+export const dynamic = "force-dynamic";
 import Container from "@/components/Container";
 import OurProjects from "@/components/home/ourproject/OurProjects";
 import OurServieses from "@/components/home/OurServieses";
