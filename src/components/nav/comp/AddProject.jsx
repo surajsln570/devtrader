@@ -95,8 +95,8 @@ export default function AddProject({ setAddProject }) {
       setVisible(true)
     }
   }
-  const handlePass = (e)=>{
-    const {value} = e.target
+  const handlePass = (e) => {
+    const { value } = e.target
     setPass(value)
     checkPass(value)
 
@@ -246,7 +246,7 @@ export default function AddProject({ setAddProject }) {
                 className='w-full bg-gray-100 focus:bg-white border rounded-lg p-3 outline-none'
                 value={pass}
                 onChange={handlePass}
-                type="password" 
+                type="password"
                 placeholder='Enter Password'
               />
             </form>
