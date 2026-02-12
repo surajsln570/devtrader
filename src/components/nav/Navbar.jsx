@@ -24,7 +24,7 @@ export default function Navbar() {
           <a
             href="/"
           >
-    <Image src={logo} loading="eager" alt="" className="h-[50px] w-[220px] hover:scale-105 transition-all duration-300 object-cover z-50 rounded-lg" />
+    <Image src={logo} loading="eager" alt="" className="h-[50px] w-[180px] hover:scale-105 transition-all duration-300 object-contain z-50 rounded-lg" />
           </a>
         </Container>
 
