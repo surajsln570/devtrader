@@ -13,9 +13,7 @@ export default function Footer({ className }) {
         <div>
           <h2 className="text-xl font-semibold mb-4">Dev Trader Group</h2>
           <p className="text-gray-300 text-sm">
-            Dev Trader Group, today has became one stop solution for the construction work.
-            Over the decades, company has transformed from a petty contractor to a company
-            which has worked on numerous projects in more than 10 cities.
+            <b className="text-yellow-400">Dev Trader Group is built on 45 years</b> of experience and trust. Founded by <b className="text-yellow-400">Ram Tej Chauhan</b> in Seur Chamurkha, Sultanpur (UP), we are committed to delivering reliable and high-quality construction work.
           </p>
         </div>
 
@@ -44,7 +42,7 @@ export default function Footer({ className }) {
 
       {/* Footer Bottom */}
       <div className="mt-10 border-t border-gray-700 pt-4 text-center text-gray-400 text-sm">
-        © {new Date().getFullYear()} All rights reserved - Dev Trader. Designed by Sysfo Software Solutions
+        © {new Date().getFullYear()} All rights reserved - Dev Trader. Designed by GR Group Software Solutions 
       </div>
     </footer>
   );

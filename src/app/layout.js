@@ -4,6 +4,8 @@ import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import Footer from "@/components/Footer";
 import { AppProvider } from "@/context/appContext";
+import { BsWhatsapp } from "react-icons/bs";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +26,8 @@ export default function RootLayout({ children }) {
         <AppProvider>
           <Navbar />
           <main className="w-full relative top-[80px]">
+            <Link className='fixed z-50 right-5 bottom-5' href={"https://wa.me/+919598063467"}><BsWhatsapp className='text-5xl bg-[green] text-white rounded-t-full rounded-br-full' /></Link>
+
             {children}
           </main>
           <Footer className={'relative top-[80px]'} />

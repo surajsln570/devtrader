@@ -7,6 +7,8 @@ import { useState } from 'react'
 import logo from '@/assets/logo1.jpg'
 import Image from 'next/image.js'
 import AddProject from './comp/AddProject.jsx'
+import Phone from '../contact/Phone.jsx'
+
 
 export default function Navbar() {
   const [menu, setMenu] = useState(false)
@@ -16,6 +18,7 @@ export default function Navbar() {
     <>
     {addProject && <AddProject setAddProject={setAddProject}/>}
       {/* Navbar */}
+      
       <Container className={`h-[80px] z-40 fixed w-full px-6 justify-between 
       bg-black/70 backdrop-blur-md border-b border-white/10 shadow-lg`}>
 

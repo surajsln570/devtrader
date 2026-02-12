@@ -17,7 +17,7 @@ export default function OurProjects({projects}) {
     <Container className={'flex-col w-full mt-5'}>
       <h1 className='text-4xl font-semibold'>Our Projects</h1>
       <p className='text-lg text-text-mute text-center px-5'>
-        To improve clients experiences through constant innovation...
+        Here are the projects that we had completed. We worked on several projects and provided our clients their sweetest and loveable memory for there homes, hospitals, school and other building structures.  
       </p>
 
       {CivilConstruction.length > 0 &&

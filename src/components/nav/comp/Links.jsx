@@ -3,10 +3,8 @@ import React, { useState } from 'react'
 import Container from '../../Container'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useAppContext } from '@/context/appContext'
 
 export default function Links({ className, setMenu, setAddProject }) {
-    const {isLoggedIn} = useAppContext();
     const pathname = usePathname()
     const services = [
         "Architectural",
@@ -26,10 +24,7 @@ export default function Links({ className, setMenu, setAddProject }) {
     ]
     const [serviceOpen, setServiceOpen] = useState(false);
     const [projectOpen, setProjectOpen] = useState(false);
-    const logOut = async () => {
-        console.log('logout')
-        setMenu(false)
-    }
+    
 
     return (
         <Container className={`${className} h-full w-full justify-end`}>

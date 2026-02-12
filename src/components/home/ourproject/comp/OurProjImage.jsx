@@ -74,7 +74,7 @@ export default function OurProjImage({ oneTypeProj }) {
 
                 <MdDelete
                   onClick={(e)=>handleClick(e,im._id)}
-                  className='absolute right-0 z-20 text-xl md:text-2xl text-white hover:scale-105 transition-all duration-300 top-0'
+                  className='absolute right-0 z-20 text-3xl md:text-2xl text-white hover:scale-105 transition-all duration-300 top-0'
                 />
               </div>
 
