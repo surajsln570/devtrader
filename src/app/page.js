@@ -4,7 +4,6 @@ import OurProjects from "@/components/home/ourproject/OurProjects";
 import OurServieses from "@/components/home/OurServieses";
 import Slider from "@/components/home/Slider.jsx";
 import Testimunial from "@/components/home/testimonial/Testimunial";
-import { getAllProject } from "@/fetch/project.api";
 import Link from "next/link";
 
 export default async function Home() {
@@ -20,8 +19,7 @@ export default async function Home() {
     'Vaastu consultation'
   ]
 
-  const projects = await getAllProject();
-  console.log(projects)
+  
 
   return (
     <Container className={'w-full flex-col '}>
