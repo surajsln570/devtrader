@@ -58,7 +58,7 @@ export default async function Home() {
           </Link>
         ))}
       </Container>
-      <OurProjects projects={projects} />
+      <OurProjects />
       <OurServieses heading={'Our Services'} para={'To improve clients experiences through constant innovation and understanding, with a focus on quality, time and cost so that when it comes to TS Nirman Group, clients come to expect nothing but the best from us.'} />
       <Testimunial />
       <Container className='flex-wrap gap-10 justify-center m-16'>
