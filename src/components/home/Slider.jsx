@@ -4,11 +4,18 @@ import Container from '@/components/Container.jsx'
 import { GrNext } from "react-icons/gr"
 import Image from 'next/image'
 import { useAppContext } from '@/context/appContext'
+import { getAllProject } from "@/fetch/project.api";
 
-export default function Slider({projects}) {
 
+export default function Slider() {
+const [projects, setProjects] = useState([])
   const [visible, setVisible] = useState(0)
-
+  const getprojects = async()=>{
+    const p = await getAllProject();
+  }
+useEffect(() => {
+    getprojects()
+  }, [])
   // auto slide
   useEffect(() => {
     if (!projects?.length) return
