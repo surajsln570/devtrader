@@ -1,8 +1,10 @@
 import Container from '@/components/Container'
 import OurProjImage from './comp/OurProjImage'
+import { getAllProject } from "@/fetch/project.api";
 
-export default function OurProjects({projects}) {
-
+export default function OurProjects() {
+const projects = await getAllProject();
+  console.log(projects)
   const CivilConstruction = projects.filter(
     p => p.projectType === 'Civil Construction'
   ).slice(0,3)
