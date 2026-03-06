@@ -4,9 +4,12 @@ import OurProjects from "@/components/home/ourproject/OurProjects";
 import OurServieses from "@/components/home/OurServieses";
 import Slider from "@/components/home/Slider.jsx";
 import Testimunial from "@/components/home/testimonial/Testimunial";
+import { getAllProject } from "@/fetch/project.api";
 import Link from "next/link";
 
 export default async function Home() {
+
+
   const linkName = [
     'Architectural',
     'Civil construction',
@@ -19,13 +22,14 @@ export default async function Home() {
     'Vaastu consultation'
   ]
 
-  
+  const projects = await getAllProject();
+  console.log(projects)
 
   return (
     <Container className={'w-full flex-col '}>
       {/* slider + sidebar */}
       <Container className={'flex-col relative md:h-[75vh] w-full'}>
-        <Slider projects={projects}/>
+        <Slider projects={projects} />
         <Container className={`hidden md:flex flex-col absolute right-10 top-1/2 -translate-y-1/2
             w-[260px] rounded-2xl bg-black/70  border border-white/10 shadow-xl
             p-4 `}>
@@ -58,7 +62,7 @@ export default async function Home() {
           </Link>
         ))}
       </Container>
-      <OurProjects />
+      <OurProjects projects={projects} />
       <OurServieses heading={'Our Services'} para={'To improve clients experiences through constant innovation and understanding, with a focus on quality, time and cost so that when it comes to TS Nirman Group, clients come to expect nothing but the best from us.'} />
       <Testimunial />
       <Container className='flex-wrap gap-10 justify-center m-16'>
