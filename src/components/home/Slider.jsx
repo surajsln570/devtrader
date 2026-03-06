@@ -7,8 +7,15 @@ import { useAppContext } from '@/context/appContext'
 import { getAllProject } from "@/fetch/project.api";
 
 
-export default function Slider({ projects }) {
+export default function Slider() {
   const [visible, setVisible] = useState(0)
+  const [projects, setProjects] = useState([])
+
+  useEffect(() => {
+    getAllProject().then((project) => {
+      setProjects(project)
+    })
+  }, [])
   // auto slide
   useEffect(() => {
     if (!projects?.length) return
